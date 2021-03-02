@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header class="login-header">
+        <nav class="login-navbar">
+            <a href="../index.html">
+                <img src="../assets/images/logo.svg" alt="">
+            </a>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="wrapper">
+            <div class="grid-login-container">
+                <div class="login-form">
+                    <div class="login-form-wrapper">
+                        <h3 class="login-title">Hello Admin</h3>
+                        <hr class="title-under-line">
+                        <input type="text" id="userEmail" placeholder="Email">
+                        <input type="password" id="userPassword" placeholder="Password">
+                        <p class="error-message">Wrong Password or Email</p>
+                        <button onclick="authCurrentUserOnPage()">Login</button>
+                    </div>
+                </div>
+                <div class="login-image">
+                    <div class="loading-elips"></div>
+                    <img src="./images/loginImage.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="./js/fireBase.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        window.onload = function() {
+
+            setTimeout( function() {
+                let preloader = document.querySelector('.page-loader')
+                if( !preloader.classList.contains('done') ){
+                    preloader.classList.add('loading-end')
+                }
+            }, 1000)
+        }
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+        .page-loader{
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            opacity: 1;
+            transition: all .5s ease;
+        }
+        .loading-end{
+            opacity: 0;
+            pointer-events: none;
+        }
+        .lds-ring {
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+        .lds-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            margin: 8px;
+            border: 8px solid #63CDDA;
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: #63CDDA transparent transparent transparent;
+        }
+        .lds-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+        .lds-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+        .lds-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+        @keyframes lds-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="./assets/style/blog/blog.css">
+    <title>Hello</title>
+</head>
+<body>
+
+    <div class="page-loader">
+        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+    </div>
+    
+    <header class="header">
+        <div class="wrapper">
+            <div class="header-container">
+                <h3 class="blog-title">Blog</h3>
+                <div class="text-container">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum ipsum perferendis iure perspiciatis quae accusantium ea dignissimos saepe aut, vero modi assumenda obcaecati.</p>
+                    <div class="btn-group">
+                        <a id="all-filter" onclick="blogsFilter('all')" class="btn" >All</a>
+                        <a id="life-filter" onclick="blogsFilter('show-life')" class="btn" >Life style</a>
+                        <a id="cooking-filter" onclick="blogsFilter('show-cooking')" class="btn" >Cooking</a>
+                        <a id="shop-filter" onclick="blogsFilter('show-shop')" class="btn" >Shop</a>
+                        <a id="style-filter" onclick="blogsFilter('show-style')" class="btn" >Style</a>
+                    </div>
+
+                    <div class="search-container">
+                        <div class="post-input-group">
+                            <input id="search" class="search-input" type="text" placeholder="Поиск">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrapper">
+            <div class="grid-blog-container">
+
+            </div>
+        </div>
+    </main>
+    
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script> 
+    <script src="./backend/js/fireBase.js"></script>
+    <script src="./assets/js/blog.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/backend.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="wrapper">
+            <nav class="navbar">
+                <ul class="navbar-items">
+                    <li class="nav-text">Admin panel</li>
+                    <li class="nav-item">
+                        <a class="btn-log-out" href="">Main page</a>
+                        <a class="btn-log-out" href="">Log out</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="create-edit" class="main">
+
+        <section class="admin-section">
+            <div class="wrapper">
+
+                <div class="create-blog-container">
+
+                    <h1 class="blog-create-title">Создать новую запись</h1>
+                        
+                        <div class="input-container">
+                            <div class="input-group">
+                                <label for="image">Ссылка на Картинку (https://images.unsplash...)</label>
+                                <input type="text" placeholder="Image" id="image" required>
+                            </div>
+        
+                            <div class="input-group">
+                                <label for="title">Заголовок Поста</label>
+                                <input type="text" placeholder="Title" id="title" required>
+                            </div>
+                        </div>
+
+                        <h3 class="hash-of-post-title">Хештеги для поста</h3>
+
+                        <div class="checkbox-container">
+
+                            <div class="checkbox-group">
+                                <label for="lifeStyleCheckbox">#LifeStyle</label>
+                                <input type="checkbox" id="lifeStyleCheckbox">
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label for="cookingCheckbox">#Cooking</label>
+                                <input type="checkbox" id="cookingCheckbox">
+                            </div>
+
+                            <div class="checkbox-group">
+                                <label for="shopCheckbox">#Shop</label>
+                                <input type="checkbox" id="shopCheckbox">
+                            </div>
+
+                            <div class="checkbox-group">
+                                <label for="styleCheckbox">#Style</label>
+                                <input type="checkbox" id="styleCheckbox">
+                            </div>
+
+                        </div>
+
+                        <div class="textarea-container">
+
+                            <div class="options-title-tab">
+                                <h3 class="options-title">Дополнительные Опции</h3>
+                                <div class="option-arrow">
+                                    <img src="./images/arrow-down.svg" alt="Arrow down">
+                                </div>
+                            </div>
+
+                            <div style="height:0px;" class="options-container">
+                                <div class="tebs-content-wrapper">
+                                    <p class="option-info"><span>---</span> Добавляет вертикальную лигию (Разделитель)</p>
+                                    <p class="option-info"><span>-img- Url Картинки -#-</span> Добавляет картинку (Пример: -img- unsplash.com/image/image_id -#- )</p>
+                                    <p class="option-info"><span>-a- Ссылка -enda-</span> Добавляет Ссылку (Пример: -a- https://google.com -enda- )</p>
+                                    <p class="option-info"><span>-h3- Текст -endh3-</span> Добавляет Заголовок (Пример: -р3- Привет мир -endh3- )</p>
+                                    <p class="option-info"><span>-v- Уникальная ссылка -endv-</span> Добавляет Видео с YouTube (Пример: -v- hFrt23$@Rs2 -endv- )</p>
+                                </div>
+                            </div>   
+
+                            <textarea rows="14" placeholder="Text" id="text" required></textarea>
+                        </div>
+
+
+                        
+                        <div class="post-btns-container">
+                            <button type="submit" class="btn create-btn" onclick="sendDataToServer()" >Продолжить</button>
+                            <button type="submit" class="btn create-btn" onclick="clearInputValue()" >Очистить Все</button>
+                        </div>
+
+                    <p id="data"></p>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="other-blogs">
+            <div class="wrapper">
+                
+                <h3>Все посты</h3>
+
+                <div class="search-container">
+                    <div class="post-input-group">
+                        <input id="search" class="search-input" type="text" placeholder="Поиск">
+                    </div>
+                </div>
+
+                <div class="all-posts-wrapper">
+                    <div class="all-post-container">
+
+
+                        
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="./js/fireBase.js"></script>
+    <script src="./js/backend.js"></script>
+
+</body>
+</html>
